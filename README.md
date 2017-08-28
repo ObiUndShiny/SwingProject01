@@ -1,3 +1,3 @@
 # Swing_Baseproject
 
-*MainFrame + Application code create by Huemer Peter
+**MainFrame.java + Application.java code created by Huemer Peter
