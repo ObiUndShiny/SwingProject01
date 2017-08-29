@@ -75,9 +75,7 @@ public class MainFrame extends JFrame {
 		login.addActionListener(llistener);		
 		control_buttons.add(login);
 		
-		JButton cancel = new JButton("CANCEL");
-		CancelListener clistener = new CancelListener();
-		cancel.addActionListener(clistener);
+		SwitchButton cancel = new SwitchButton();
 		control_buttons.add(cancel);
 		
 		contentPane.add(login_report, BorderLayout.CENTER);
@@ -98,7 +96,6 @@ public class MainFrame extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			
 			
 			char[] chars = password_field.getPassword();
 			String password = new String(chars);
