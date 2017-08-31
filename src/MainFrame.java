@@ -109,7 +109,9 @@ public class MainFrame extends JFrame {
 			
 		}
 		
-		private class RememberListener implements ActionListener {
+		
+	}
+	private class RememberListener implements ActionListener {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -120,6 +122,4 @@ public class MainFrame extends JFrame {
 			
 		}
 		
-	}
-	
 }
