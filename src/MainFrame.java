@@ -77,7 +77,7 @@ public class MainFrame extends JFrame {
 		
 		JButton remember = new JButton("Remember me?");
 		RememberListener rlistener = new RememberListener();
-		remember.addActionListener(rlistener);
+		login.addActionListener((ActionListener) rlistener);		
 		control_buttons.add(remember);
 		
 		SwitchButton cancel = new SwitchButton();
