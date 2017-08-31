@@ -8,11 +8,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
@@ -75,25 +78,40 @@ public class MainFrame extends JFrame {
 		login.addActionListener(llistener);		
 		control_buttons.add(login);
 		
-		JButton remember = new JButton("Remember me?");
-		RememberListener rlistener = new RememberListener();
-		login.addActionListener((ActionListener) rlistener);		
-		control_buttons.add(remember);
+//		JButton remember = new JButton("Remember me?");
+//		RememberListener rlistener = new RememberListener();
+//		login.addActionListener((ActionListener) rlistener);		
+//		control_buttons.add(remember);
+		
+		JCheckBox remeber_me = new JCheckBox("Remeber me?");
+		remeber_me.addActionListener(new RememberListener());
+		control_buttons.add(remeber_me);
+		
+		JPanel group_buttons = new JPanel(new GridLayout(4, 1));
+		
+		ButtonGroup group = new ButtonGroup();
+		
+		JRadioButton test1 = new JRadioButton("Test1");
+		group_buttons.add(test1);
+		JRadioButton test2 = new JRadioButton("Test2");
+		group_buttons.add(test2);
+		JRadioButton test3 = new JRadioButton("Test3");
+		group_buttons.add(test3);
+		JRadioButton test4 = new JRadioButton("Test4");
+		group_buttons.add(test4);
+		
+		group.add(test1);
+		group.add(test2);
+		group.add(test3);
+		group.add(test4);
+		
+		contentPane.add(group_buttons, BorderLayout.WEST);
 		
 		SwitchButton cancel = new SwitchButton();
 		control_buttons.add(cancel);
 		
 		contentPane.add(login_report, BorderLayout.CENTER);
 		contentPane.add(control_buttons, BorderLayout.SOUTH);
-		
-	}
-	
-	private class CancelListener implements ActionListener {
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			System.exit(0);
-		}
 		
 	}
 	
@@ -111,15 +129,16 @@ public class MainFrame extends JFrame {
 		
 		
 	}
+	
 	private class RememberListener implements ActionListener {
 
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		@Override
+		public void actionPerformed(ActionEvent e) {
 			
-				System.out.println("Wir werden uns dich Merken!");
+			System.out.println("Wir werden uns dich Merken!");
 				
-			}
-			
 		}
+			
+	}
 		
 }
