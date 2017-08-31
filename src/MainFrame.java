@@ -75,6 +75,11 @@ public class MainFrame extends JFrame {
 		login.addActionListener(llistener);		
 		control_buttons.add(login);
 		
+		JButton remember = new JButton("Remember me?");
+		RememberListener rlistener = new RememberListener();
+		remember.addActionListener(rlistener);
+		control_buttons.add(remember);
+		
 		SwitchButton cancel = new SwitchButton();
 		control_buttons.add(cancel);
 		
@@ -101,6 +106,17 @@ public class MainFrame extends JFrame {
 			String password = new String(chars);
 			
 			System.out.println(username_field.getText() + "|" + password);
+			
+		}
+		
+		private class RememberListener implements ActionListener {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			
+				System.out.println("Wir werden uns dich Merken!");
+				
+			}
 			
 		}
 		
