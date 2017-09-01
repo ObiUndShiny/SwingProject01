@@ -6,6 +6,9 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
@@ -13,9 +16,12 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
+import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JTextField;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
@@ -105,6 +111,18 @@ public class MainFrame extends JFrame {
 		group.add(test3);
 		group.add(test4);
 		
+		JMenuBar bar = new JMenuBar();
+		contentPane.add(bar, BorderLayout.NORTH);
+		
+		List<String> items = new ArrayList<>();
+		items.add("Elem1");
+		items.add("3");
+		items.add("10");
+		
+		Collections.sort(items);
+		
+		bar.add(generateMenuItems("Menu1", items));
+
 		contentPane.add(group_buttons, BorderLayout.WEST);
 		
 		SwitchButton cancel = new SwitchButton();
@@ -112,6 +130,30 @@ public class MainFrame extends JFrame {
 		
 		contentPane.add(login_report, BorderLayout.CENTER);
 		contentPane.add(control_buttons, BorderLayout.SOUTH);
+		
+	}
+	
+	/**
+	 * generates a new menu + n menu raadio buttons
+	 * 
+	 * @param name of menu
+	 * @param n radio buttons
+	 * @return the menu
+	 */
+	private JMenu generateMenuItems(String menu_name, List<String> items) {
+		
+		JMenu menu = new JMenu(menu_name);
+		ButtonGroup group = new ButtonGroup();
+		
+		for (String item : items) {
+			
+			JRadioButtonMenuItem radio = new JRadioButtonMenuItem(item);
+			menu.add(radio);
+			group.add(radio);
+			
+		}
+		
+		return menu;
 		
 	}
 	
