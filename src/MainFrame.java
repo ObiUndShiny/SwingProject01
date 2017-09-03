@@ -129,7 +129,10 @@ public class MainFrame extends JFrame {
 		control_buttons.add(cancel);
 		
 		contentPane.add(login_report, BorderLayout.CENTER);
-		contentPane.add(control_buttons, BorderLayout.SOUTH);
+		
+		ToggleButton toggle = new ToggleButton("1", "2");
+		contentPane.add(toggle, BorderLayout.SOUTH);
+		
 		
 	}
 	
@@ -143,6 +146,7 @@ public class MainFrame extends JFrame {
 	private JMenu generateMenuItems(String menu_name, List<String> items) {
 		
 		JMenu menu = new JMenu(menu_name);
+		
 		ButtonGroup group = new ButtonGroup();
 		
 		for (String item : items) {
