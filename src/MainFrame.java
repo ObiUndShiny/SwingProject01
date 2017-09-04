@@ -128,11 +128,13 @@ public class MainFrame extends JFrame {
 		SwitchButton cancel = new SwitchButton();
 		control_buttons.add(cancel);
 		
-		contentPane.add(login_report, BorderLayout.CENTER);
+		contentPane.add(login_report, BorderLayout.EAST);
 		
 		ToggleButton toggle = new ToggleButton("1", "2");
 		contentPane.add(toggle, BorderLayout.SOUTH);
 		
+		
+		contentPane.add(new ChromaPanel(), BorderLayout.CENTER);
 		
 	}
 	
